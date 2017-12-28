@@ -5,6 +5,8 @@ class: center, middle
 [live presentation](https://alonisser.github.io/abstractions-talk/) <br/>
 [twitter](alonisser@twitter.com), [medium](https://medium.com/@alonisser/)
 
+Works at [zencity.io](https://zencity.io/). We help cities leverage AI to understand their citizens needs.
+
 #####Shameless promotion: you can also read my political blog: [דגל אדום](degeladom@wordpress.com)
 ---
 # Castles of the mind
@@ -210,7 +212,9 @@ mongo_url="mongodb://myuser:mypass@ds666-a0.mlabs.com,ds666-a1.mlabs.com:61055/m
 
 # Leaky DB abstraction
 So while from the application code perspective "nothing has changed" . LOTS HAS ACTUALLY CHANGED:
+
 --
+
 * local socket communication with local process has been replaced with over the unreliable internet network via tcp/ip 
 * So we now need to reason about ssl, latency, consistency (It's a cluster!).
 * Failure handling and connection pooling which are usually a small concern on a local install, are an order of magnitude more complex under those conditions
@@ -218,22 +222,26 @@ So while from the application code perspective "nothing has changed" . LOTS HAS 
 ---
 
 # Numbers
-Numbers that every programmer should know:
 
+.img-container[![Numbers that every programmer should know](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)]
+
+from https://gist.github.com/hellerbarde/2843375
 
 ---
 
 # Open question
 
 Is the fact that all this new complexity can be added while completely abstracted from our application code is good? 
+
 ---
 
-# A really bad day
+# First Mystery: staging failure
 
-## Everything is sloooowww
+One of the first things I was told
+
  
 --
-
+Yes I do know that **the only real staging environment is production**
 
 ---
 
