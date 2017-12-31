@@ -6,7 +6,7 @@ class: center, middle
 [live presentation](https://alonisser.github.io/abstractions-talk/) <br/>
 [twitter](alonisser@twitter.com), [medium](https://medium.com/@alonisser/)
 
-Works at [zencity.io](https://zencity.io/). We help cities leverage AI to understand their citizens needs.
+Works at [zencity.io](https://zencity.io/). We help cities leverage AI to understand their citizen's needs.
 
 #####Shameless promotion: you can also read my political blog: [דגל אדום](degeladom@wordpress.com)
 ---
@@ -316,7 +316,6 @@ And networks have real constraints: from routers to the physics limiting the ban
 # Networks
 
 .img-container.center[![world_in_hand](./world_in_hand.jpg)]
-
 
 But the internet makes it seem small
 
