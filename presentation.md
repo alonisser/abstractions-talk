@@ -1,7 +1,7 @@
 class: center, middle
 
 # Abstractions.
-## And 3 sad devops tales of the slow app
+## And 3 sad tales of the slow app
 
 [live presentation](https://alonisser.github.io/abstractions-talk/) <br/>
 [twitter](alonisser@twitter.com), [medium](https://medium.com/@alonisser/)
@@ -12,26 +12,32 @@ Works at [zencity.io](https://zencity.io/). We help cities leverage AI to unders
 ---
 # Castles of the mind
 
->*The programmer, like the poet, works only slightly removed from pure thought-stuff. He builds his castles in the air, from air, creating by exertion of the imagination.”* 
-― Frederick P. Brooks Jr., The Mythical Man-Month: Essays on Software Engineering
+>*The programmer, like the poet, works only slightly removed from pure thought-stuff. He builds his castles in the air, from air, creating by exertion of the imagination.”*
+ 
+>Frederick P. Brooks Jr., The Mythical Man-Month: Essays on Software Engineering
 
 ---
 # Abstractions
 
 Software is about abstractions. It's the way we communicate. It's an important part of the way we reason about software.
-We are building castles with abstractions.
+
+We are building our castles with abstractions.
 
 --
 
 And yes. It's **abstractions all the way down**.
-.img-half-container[![turtles all the way down](./turtle.png)]
+.img-half-container.center[![turtles all the way down](./turtle.png)]
 
 ---
 
 # The old tale about the DB connection
-
+A simple, but ugly start
 ```python
+//Application code
+
 db = MongoClient('mongodb://127.0.0.1:27017/mydb')
+
+return db.find({})
 ```
 
 ---
@@ -556,7 +562,7 @@ Your guess is as good as mine
 
 # Joined and owned
 
-Took me quite a while not understand what New relic monitoring was shouting at me:
+Took me quite a while to understand what New relic monitoring was shouting at me:
 
 .img-half-container.center[![New relic result](new_relic.png)]
 
@@ -596,7 +602,7 @@ This "ORM" had one abstraction too many.
 
 # Joined and owned
 
-The real constraints of different dbs, do matter, trying to abstract them away leads to harm.
+The real **constraints** of **different** dbs, **do matter**. trying to abstract them away leads to harm.
 
 That's why choosing our dbs is not done by rolling dice but by (hopefully) careful technical evaluation.
 
@@ -625,6 +631,7 @@ just behind those beautiful castles of the mind
 
 * When is the point of "too much" abstraction 
 
+* Is it possible to automated "linting" of too much abstraction?
 
 ---
 
