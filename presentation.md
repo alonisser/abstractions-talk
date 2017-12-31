@@ -514,7 +514,7 @@ write code in the native domain language, mapped to software logic. In lot's of 
 # First there was the ORM
 
 Now [ORM bashing is not new](https://martinfowler.com/bliki/OrmHate.html) and Object relational mapping was coined [Vietnam war of computer science](https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/) and yes,
-It's obviously a leaking abstraction.
+It's obviously a leaky   abstraction.
 
 .img-half-container.center[![Vietnam](vietnam.jpg)]
 
