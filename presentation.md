@@ -125,14 +125,14 @@ URI - Uniform Resource Identifier
 mongo_url="mongodb://127.0.0.1:27017/mydb"
          
 ```
-It's a powerful tool: it's a concise abstraction which delivers lot's of data:
- a protocol - how do we communicate, identification, resource location and even configuration
+It's a powerful tool. It's a concise abstraction which delivers lots of data:
+ a protocol, identification, resource location and even configuration
 
 ---
 
 # The old tale about the DB connection
 
-We change from using concrete ip address to a localhost name.
+We change from using a concrete ip address to a localhost name.
 
 ```python
 
@@ -160,7 +160,7 @@ Names! Is there a more used (and litigated) software abstraction?
 
 # The old tale about the DB connection
 
-As we are moving to deploy we opt to use a mongo as a service from a provider
+As we are moving to deploy we opt to use a mongo as a service from a provider.
 
 ```python
 
@@ -202,11 +202,12 @@ Note that from the application code, still nothing changes.
 
 # The old tale about the DB connection
 
-Lets reflect at the way we went.
+Lets reflect on the way we went.
 
 --
 
-from the crude local mongo code in the application to an abstracted db api which actually uses a highly available cloud service.
+From the crude local mongo code in the application to an abstracted db api which actually uses a highly available cloud service.
+
 This was done by small iterative changes, in good **refactoring** practice.
 
 --
@@ -240,7 +241,7 @@ So while from the application code perspective "nothing has changed" . LOTS HAS 
 
 --
 
-* local socket communication with local process has been replaced with over the unreliable internet network via tcp/ip 
+* local socket communication with a local process has been replaced with communication over the unreliable internet network via tcp/ip 
 * So we now need to reason about ssl, latency, consistency (It's a cluster!).
 * Failure handling and connection pooling which are usually a small concern on a local install, are an order of magnitude more complex under those conditions
  
@@ -256,7 +257,7 @@ from https://gist.github.com/hellerbarde/2843375
 
 # Open question
 
-Is the fact that all this new complexity was added completely abstracted from our application code is good? 
+Is it good that that all this new complexity was added completely abstracted from our application code? 
 
 --
 
@@ -283,7 +284,7 @@ Naturally new code was "tested" and tinkered with at production.
  
 --
 
-Yes I do know that **the only real staging environment is production** but having no non local, long living, playground is unacceptable.
+Yes I do know that **the only real staging environment is production** but having no non-local, long living playground is unacceptable.
 
 ---
 # First tale: staging failure
@@ -292,11 +293,12 @@ Lets find our killer.
 
 --
 
-Previous fixing efforts went into throwing more cpu power/memory GBs on the staging environment instance. or on the staging MongoDB installation.
+Previous fixing efforts went into throwing more cpu power/memory GBs on the staging environment instance.
+ Or on the staging MongoDB installation.
 
 --
 
-It didn't help. Every moving part had more then enough cpu and more then enough memory. throwing more wouldn't improve it. 
+It didn't help. Every moving part had more than enough cpu and more than enough memory. Throwing more at it wouldn't improve it. 
 
 --
 
@@ -355,8 +357,8 @@ And with the way multiple software layers and abstractions, make db configuratio
 
 --
 
-It might also has to do with software development "silos", Who's concern is it? 
-it's not a db vendor concern nor a saas db provider concern but also out of the immediate responsibilty of app devs.
+It might also have to do with software development "silos". Whose concern is it? 
+it's not a db vendor's concern nor a saas db provider's concern but it's also out of the immediate responsibilty of app devs.
 
 ---
 
@@ -378,8 +380,8 @@ class: center, middle
 
 The CPU is in the heart of computing, a tremendously complex hardware and software.
 
-for at least half a century we are building better and higher abstractions about communicating with the cpu.
- We moved from punch cards to assembly,
+For at least half a century we have been building better and higher abstractions about communicating with the cpu.
+ We've moved from punch cards to assembly,
 from Assembly to c and from c to lots of higher level and very high level languages. 
 
 .img-half-container.center[![cpu scheme](./cpu4960-I7.jpg)]
@@ -472,10 +474,9 @@ Depending on the number of ECUs you bought.
 
 --
 
-So while abstracted processing power is a necessary abstraction in the world of Infrastructure As A Service.
-
-It's completely missing from our tools. from the point of view of the server it's very hard to tell the difference between a maxed out cpu to a 'stolen' one.
-And impossible to tell the difference between 'steal' happening from noisy neighbour, over sold server or being throttled by hypervisor.  
+So while abstracted processing power is a necessary abstraction in the world of Infrastructure As A Service(IAAS); it's completely missing from our tools.
+ From the point of view of the server it's very hard to tell the difference between a maxed out cpu to a 'stolen' one.
+And impossible to tell the difference between a 'steal' happening from noisy neighbour, over sold server or being throttled by hypervisor.  
 
 --
 
@@ -484,7 +485,7 @@ I'm sure this isn't a good thing
 ---
 # Second tale: the cpu strikes back
 
-Two month later we started getting a really degraded performance from our (hosted) MongoDB installation. 
+Two months later we started getting a really degraded performance from our (hosted) MongoDB installation. 
 
 Turned out that it was the T2 instance hell all over again, this time with the db provider hosting instances hitting the limit, due to our queries churning the cpu.
 
@@ -508,13 +509,14 @@ class: center, middle
 # First there was the ORM
 
 ORM's are a great and extremely useful software tool. They abstract nitty gritty details of sql dialects and allow us to 
-write code in the native domain language, mapped to software logic. In lot's of use cases using an orm is a no brainer. you have other important things to worry about then db sanitation or obscure sql constructs.
+write code in the native domain language, mapped to software logic. In lots of use cases using an orm is a no brainer.
+ You have other important things to worry about than db sanitation or obscure sql constructs.
 
 ---
 # First there was the ORM
 
 Now [ORM bashing is not new](https://martinfowler.com/bliki/OrmHate.html) and Object relational mapping was coined [Vietnam war of computer science](https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/) and yes,
-It's obviously a leaky   abstraction.
+it's obviously a leaky   abstraction.
 
 .img-half-container.center[![Vietnam](vietnam.jpg)]
 
@@ -553,7 +555,7 @@ In the land of SQL ORM we can probably all understand the meaning here:
 
 --
 
-But what does this even mean with the underlying DB is Mongo? which is a **Document Database** and has no notion of **join**
+But what does this even mean when the underlying DB is Mongo, which is a **Document Database** and has no notion of **join**?
 
 Your guess is as good as mine
    
@@ -601,7 +603,7 @@ This "ORM" had one abstraction too many.
 
 # Joined and owned
 
-The real **constraints** of **different** dbs, **do matter**. trying to abstract them away leads to harm.
+The real **constraints** of **different** dbs, **do matter**. Trying to abstract them away leads to harm.
 
 That's why choosing our dbs is not done by rolling dice but by (hopefully) careful technical evaluation.
 
@@ -610,15 +612,15 @@ That's why choosing our dbs is not done by rolling dice but by (hopefully) caref
 # Mitigating abstraction disaster
 I can't offer a lot of help here.
 
-But good metrics timeseries of **different** aspects for your system would prove invaluable to debugging this kind of scenarios.
+But good metrics timeseries of **different** aspects for your system would prove invaluable to debugging these kinds of scenarios.
 
 --
 
-Collect system metrics, network metrics, application inner metrics, APM data, cloud provider metrics, errors and commits and yes, business KPI metrics.
+You need to collect: system metrics, network metrics, application inner metrics, APM data, cloud provider metrics, errors and commits and yes, business KPI metrics.
 
-Metric exploration and overlaying might shed some light into the places your own abstractions hide from you.
+Metric exploration and overlaying might shed some light into the places your own abstractions hide from you; 
 
-just behind those beautiful castles of the mind 
+**just behind those beautiful castles of the mind** 
 
 
 ---
@@ -626,11 +628,11 @@ just behind those beautiful castles of the mind
 
 * Abstractions are evolving while our tools and languages less so. this is becoming painful.
 
-* What are the ways we can mitigate this
+* What are the ways we can mitigate this?
 
-* When is the point of "too much" abstraction 
+* When and where is the point of "too much" abstraction? 
 
-* Is it possible to automated "linting" of too much abstraction?
+* Is it possible to automate "linting" of too much abstraction?
 
 ---
 
