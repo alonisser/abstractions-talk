@@ -626,13 +626,22 @@ Metric exploration and overlaying might shed some light into the places your own
 ---
 # Discussion
 
-* Abstractions are evolving while our tools and languages less so. this is becoming painful.
+* Abstractions are evolving while our tools and languages less so. this is becoming painful. What are our missing tools?
 
-* What are the ways we can mitigate this?
+* What are the ways we can mitigate this abstraction pain?
 
 * When and where is the point of "too much" abstraction? 
 
 * Is it possible to automate "linting" of too much abstraction?
+
+---
+# Ideas
+
+* Adding abstraction review into general code review process
+
+* Dev team deep diving once in a while in one particular underlying abstraction, understanding what's beneath.
+
+* "Abstraction debt management" 
 
 ---
 
