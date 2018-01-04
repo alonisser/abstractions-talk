@@ -6,7 +6,7 @@ class: center, middle
 [live presentation](https://alonisser.github.io/abstractions-talk/) <br/>
 [twitter](alonisser@twitter.com), [medium](https://medium.com/@alonisser/)
 
-Works at [zencity.io](https://zencity.io/). We help cities leverage AI to understand their citizen's needs.
+Works at [zencity.io](https://zencity.io/). We help cities leverage AI to understand their citizens' needs.
 
 #####Shameless promotion: you can also read my political blog: [דגל אדום](degeladom@wordpress.com)
 ---
@@ -206,13 +206,13 @@ Lets reflect on the way we went.
 
 --
 
-From the crude local mongo code in the application to an abstracted db api which actually uses a highly available cloud service.
+From the crude local mongo code in the application to an abstracted DB API which actually uses a highly available cloud service.
 
 This was done by small iterative changes, in good **refactoring** practice.
 
 --
 
-And from application code perspective nothing changes
+And from the application code's perspective nothing changes
 
 --
 
@@ -237,12 +237,12 @@ mongo_url="mongodb://myuser:mypass@ds666-a0.mlabs.com,ds666-a1.mlabs.com:61055/m
 ---
 
 # Leaky DB abstraction
-So while from the application code perspective "nothing has changed" . LOTS HAS ACTUALLY CHANGED:
+So while from the application code's perspective "nothing has changed" . LOTS HAS ACTUALLY CHANGED:
 
 --
 
 * local socket communication with a local process has been replaced with communication over the unreliable internet network via tcp/ip 
-* So we now need to reason about ssl, latency, consistency (It's a cluster!).
+* So we now need to reason about SSL, latency, consistency (It's a cluster!).
 * Failure handling and connection pooling which are usually a small concern on a local install, are an order of magnitude more complex under those conditions
  
 ---
